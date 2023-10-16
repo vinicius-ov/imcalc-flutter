@@ -1,0 +1,6 @@
+package com.digitreco.imcalcflutter.imcalcflutter
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
