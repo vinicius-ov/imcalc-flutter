@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'IMC Calc Flutter',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Calculadora IMC'),
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             alignment: Alignment.center,
                             child: Row(children: [
                               const SizedBox(
-                                width: 60,
+                                width: 80,
                                 child: Text('Nome: '),
                               ),
                               Flexible(
@@ -78,13 +78,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             alignment: Alignment.center,
                             child: Row(children: [
                               const SizedBox(
-                                width: 60,
-                                child: Text('Altura: '),
+                                width: 80,
+                                child: Text('Altura (m): '),
                               ),
                               Flexible(
                                 child: TextField(
                                     decoration: const InputDecoration(
-                                        hintText: 'Insira sua altura',
+                                        hintText:
+                                            'Insira sua altura (em metros)',
                                         hintStyle:
                                             TextStyle(color: Colors.grey)),
                                     keyboardType: TextInputType.number,
@@ -98,14 +99,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             alignment: Alignment.center,
                             child: Row(children: [
                               const SizedBox(
-                                width: 60,
-                                child: Text('Peso: '),
+                                width: 80,
+                                child: Text('Peso (kg): '),
                               ),
                               Flexible(
                                 child: TextField(
                                     decoration: const InputDecoration(
                                         labelStyle: TextStyle(fontSize: 8),
-                                        hintText: 'Insira seu peso',
+                                        hintText:
+                                            'Insira seu peso (em quilogramas)',
                                         hintStyle:
                                             TextStyle(color: Colors.grey)),
                                     keyboardType: TextInputType.number,
@@ -147,8 +149,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(10))),
-                                  backgroundColor: MaterialStateProperty.all(
-                                      const Color.fromARGB(255, 141, 79, 151))),
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.orange)),
                               child: const Text(
                                 "Calcular IMC",
                                 style: TextStyle(
@@ -181,9 +183,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Text(
-                                                    'Altura: ${person.getHeight()}'),
+                                                    'Altura: ${person.getHeight()} m'),
                                                 Text(
-                                                    'Peso: ${person.getWeight()}'),
+                                                    'Peso: ${person.getWeight()} kg'),
                                                 Text(
                                                     'IMC: ${person.getImcString()}'),
                                               ]),
